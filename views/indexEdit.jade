@@ -1,0 +1,168 @@
+extends layout
+
+block content
+    link(rel="stylesheet",href="/css/admin.css")
+    script(src="/javascripts/adminCommon.js")
+    .container
+        div.wrapper
+            // Nav tabs
+            ul.nav.nav-tabs(role='tablist')
+                li.active(role='presentation')
+                    a(href='#home', aria-controls='home', role='tab', data-toggle='tab') 首页
+                li(role='presentation')
+                    a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab') 详情页
+                li(role='presentation')
+                    a(href='#clientPhoto', aria-controls='profile', role='tab', data-toggle='tab',id="clientListBtn") 客户图片集
+                li(role='presentation')
+                    a(href='#about', aria-controls='messages', role='tab', data-toggle='tab') 关于我们
+                li(role='presentation')
+                    a(href='#settings', aria-controls='settings', role='tab', data-toggle='tab') 更多
+            // Tab panes
+            .tab-content
+                #home.tab-pane.active(role='tabpanel')
+                    form.form-horizontal(method='post',action="/adminEditSubmit",enctype='multipart/form-data')
+                        .form-group.clearfix
+                            label.col-sm-2.control-label 展示图1：
+                            div.col-sm-10
+                                input.form-control(type='file',name='fileName')
+                        .form-group.clearfix
+                            label.col-sm-2.control-label 图片描述（中文）
+                            div.col-sm-10
+                                input.form-control(type='text',name="photo[chDesc]")
+                        .form-group.clearfix
+                            label.col-sm-2.control-label 图片描述（英文）
+                            div.col-sm-10
+                                input.form-control(type='text',name="photo[enDesc]")
+                        input.form-control(type="hidden",name="photo[parentId]",value="0")
+                        .form-group.clearfix
+                            label.col-sm-2.control-label 位置
+                            div.col-sm-10
+                                select.form-control(name="photo[childId]")
+                                    option(value='0') 轮播图
+                                    option(value="1") 视频图
+                                    option(value="2") 风格图
+                        .form-group.clearfix.text-center
+                            input.btn.btn-primary(type='submit',value="提交")
+                #profile.tab-pane(role='tabpanel')
+                    form.form-horizontal(method='post',action="/adminEditSubmit",enctype='multipart/form-data')
+                        .form-group.clearfix
+                            label.col-sm-2.control-label 展示图1：
+                            div.col-sm-10
+                                input.form-control(type='file',name='fileName')
+                        .form-group.clearfix
+                            label.col-sm-2.control-label 图片描述（中文）
+                            div.col-sm-10
+                                input.form-control(type='text',name="photo[chDesc]")
+                        .form-group.clearfix
+                            label.col-sm-2.control-label 图片描述（英文）
+                            div.col-sm-10
+                                input.form-control(type='text',name="photo[enDesc]")
+                        .form-group.clearfix
+                            label.col-sm-2.control-label 父分类
+                            div.col-sm-10
+                                select.form-control(name="photo[parentId]")
+                                    option(value="1") 美人鱼岛
+                                    option(value="2") 日落
+                                    option(value="3") 水上清真寺
+                                    option(value="4") 神山
+                                    option(value="5") 度假村
+                                    option(value="6") 市区
+                        .form-group.clearfix
+                            label.col-sm-2.control-label 子分类
+                            div.col-sm-10
+                                select.form-control(name="photo[childId]")
+                                    option(value='0') 轮播图
+                                    option(value="1") 景区介绍
+                                    option(value="2") 客户照片
+                        .form-group.clearfix.text-center
+                            input.btn.btn-primary(type='submit',value="提交")
+                #clientPhoto.tab-pane(role='tabpanel')
+                    button.btn.btn-primary.createSet 创建图片集
+                    .photoSet.form-horizontal(style="margin-top:20px;")
+                        .photoSetInput(style="display:none;")
+                            .form-group.clearfix
+                                label.col-sm-2.control-label 父分类
+                                div.col-sm-10
+                                    select.col-sm-6.form-control(id="parentId")
+                                        option(value="1") 美人鱼岛
+                                        option(value="2") 日落
+                                        option(value="3") 水上清真寺
+                                        option(value="4") 神山
+                                        option(value="5") 度假村
+                                        option(value="6") 市区
+                            .form-group.clearfix
+                                label.col-sm-2.control-label 图片集名称
+                                div.col-sm-10
+                                    input.col-sm-6.form-control(type="text",placeholder="请输入图片集的名称",id="photoSetName")
+                            .form-group.clearfix
+                                label.col-sm-2.control-label 封面图片
+                                div.col-sm-10
+                                    input.form-control(type="file",id="f-file")
+                            .form-group.clearfix.text-center
+                                a.btn.btn-primary(href="javascript:;",id="submit-btn",style="margin:0 10px;") 提交
+                                a.btn.btn-danger(href="javascript:;",id="cancel-btn",style="margin: 0 10px;") 取消
+                        .photoSetList.clearfix(style="border-top:1px solid #ccc;padding-top:20px;")
+                #about.tab-pane(role='tabpanel')
+                   form.form-horizontal(method="POST",action="/adminEditSubmit",enctype="multipart/form-data")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 顶部轮播图：
+                           div.col-sm-10
+                                input.form-control(type="file",id="file1")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 底部轮播图
+                           div.col-sm-10
+                                input.form-control(type="file",id="file2")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 展示图一
+                           div.col-sm-10
+                                input.form-control(type="file",id="file3")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 展示图一文字
+                           div.col-sm-10
+                                input.form-control(type="text",id="file3-text")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 展示图二
+                           div.col-sm-10
+                                input.form-control(type="file",id="file4")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 展示图二文字
+                           div.col-sm-10
+                                input.form-control(type="text",id="file4-text")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 展示图三
+                           div.col-sm-10
+                                input.form-control(type="file",id="file5")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 展示图三文字
+                           div.col-sm-10
+                                input.form-control(type="text",id="file5-text")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 展示图四
+                           div.col-sm-10
+                                input.form-control(type="file",id="file6")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 展示图四文字
+                           div.col-sm-10
+                                input.form-control(type="text",id="file6-text")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 底部介绍图
+                           div.col-sm-10
+                                input.form-control(type="file",id="file7")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 底部介绍文字1
+                           div.col-sm-10
+                                input.form-control(type="text",id="imgText1")
+                       .form-group.clearfix
+                           label.col-sm-2.control-label 底部介绍文字2
+                           div.col-sm-10
+                                input.form-control(type="text",id="imgText2")
+                       .form-group.clearfix.text-center
+                           a.btn.btn-primary.submit-about(href="javascript:;") 提交
+
+
+
+
+
+                #settings.tab-pane(role='tabpanel') ...
+
+

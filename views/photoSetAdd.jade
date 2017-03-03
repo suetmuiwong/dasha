@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    script(src="/javascripts/adminCommon.js")
+    .container
+        h3(style="padding:10px 0;") 上传客户图片
+        form.form-horizontal(method='post',action="/photoSetAddSubmit",enctype='multipart/form-data')
+            input(type='hidden',name="photo[parentId]",value='#{parentId}')
+            input(type='hidden',name="photo[setNameId]",value="#{setNameId}")
+            .form-group
+                label.col-sm-2.control-label 展示图1：
+                .col-sm-10
+                    input.form-control(type='file',name='fileName')
+            .form-group.text-center
+                input.btn.btn-primary(type='submit',value="提交")
+

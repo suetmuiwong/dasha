@@ -1,0 +1,62 @@
+extends ./layout
+
+
+block content
+    include ./includes/toMenu
+    div#carousel-banner.carousel.slide.navtop.H760-banner(data-ride="carousel")
+
+        div.carousel-inner(role="listbox")
+        div.item
+            a(href="")
+                img(src="#{about.topBannerUrl}" alt="图片二")
+
+    section#list.listCon
+        ul.wPc
+            li
+                img(src="#{about.showList1.url}" width="148" height="209" alt="")
+                p #{about.showList1.text}
+            li
+                img(src="#{about.showList2.url}" width="148" height="209" alt="")
+                p #{about.showList2.text}
+            li
+                img(src="#{about.showList3.url}" width="148" height="209" alt="")
+                p #{about.showList3.text}
+            li
+                img(src="#{about.showList4.url}" width="148" height="209" alt="")
+                p #{about.showList4.text}
+    section#slide.slideWrap
+        div.slideCon(style="height: 391px;")
+            dl.slideList.slideList01
+                dt.slideCon01
+                    img(src="/images/ban01.jpg" width="100%" alt="")
+                dd.slideTag01(style="height: 391px;")
+                    font.page 01
+                    div.tag.tag01
+                    p.eLogo  DAZZ
+            dl.slideList.slideList02
+                dt.slideCon02.none
+                    img(src="/images/ban02.jpg" width="100%" alt="")
+                dd.slideTag02(style="height: 391px;")
+                    font.page 02
+                    div.tag.tag02
+                    p.eLogo  DAZZ
+    section#aboutInfo.aboutInfo
+        div.tet01
+        div.infoCon
+            p #{about.imgText.text1}
+            div.icon01
+            p.title2 #{about.imgText.text2}
+        div.infoImg
+            img.wPc(src="#{about.imgText.url}" width="444" height="450" alt="")
+            img.wPhone(src="#{about.imgText.url}" alt="")
+            img.Aboutipad(src="#{about.imgText.url}" alt="")
+    div#carousel-banner.carousel.slide(data-ride="carousel")
+        div.carousel-inner(role="listbox")
+            div.item.active.wpc
+                a(href="")
+                    img(src="#{about.bottomBannerUrl}" alt="图片二")
+    footer
+        div.capyright
+            p 粤ICP备11032453号
+            p © 2010-2016 达莎视觉版权所有
+    script(src="/javascripts/about.js")

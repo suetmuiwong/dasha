@@ -1,0 +1,13 @@
+extends ../layout
+
+
+block content
+    include ../includes/toMenu
+    include ../includes/sidenav
+    div#carousel-banner.carousel.slide.navtop.H760-banner(data-ride="carousel" style="height:100%")
+       div.carousel-inner(role="listbox")
+           div.item.active(style="height:100% width:100%")
+               video(src="http://topapp.b0.upaiyun.com/vd.mp4" style="width:100%" preload="auto" controls loop  autoplay="autoplay")
+               div#flashContent.video_con
+                   a(href="http://www.adobe.com/go/getflashplayer")
+                        img(src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player")

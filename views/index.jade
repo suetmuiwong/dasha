@@ -1,0 +1,90 @@
+extends layout
+
+block content
+  include ./includes/toMenu.jade
+  div#carousel-banner.carousel.slide.navtop.H760-banner(data-ride="carousel")
+    ol.carousel-indicators
+      li.active(data-target="#carousel-banner" data-slide-to="0")
+      li.active(data-target="#carousel-banner" data-slide-to="1")
+      li.active(data-target="#carousel-banner" data-slide-to="2")
+    div.carousel-inner(role="listbox")
+      each banner, index in banners
+        if index == 0
+          div.item.active
+            a(href="")
+              img(src="#{banner.url}" alt="图片一")
+        else
+          div.item
+            a(href="")
+              img(src="#{banner.url}" alt="图片二")
+    a.left.carousel-control(href="#carousel-banner" role="button" data-slide="prev")
+      span.glyphicon.glyphicon-chevron-left
+      span.sr-only previous
+    a.right.carousel-control(href="#carousel-banner" role="button" data-slide="next")
+      span.glyphicon.glyphicon-chevron-right
+      span.sr-only next
+  section#campains.campaigns
+    h2.title
+    div.campaigns_pic
+      span.campaigns_pic_style1.camleft.grow
+        a(href="")
+          img.lazy(data-original="#{videos[0].url}" src="#{videos[0].url}" alt="图片一")
+      span.campaigns_pic_style2.grow
+        a(href="")
+          img.lazy(data-original="#{videos[1].url}" src="#{videos[1].url}" alt="图片二")
+      span.campaigns_pic_style3.grow
+        a(href="")
+          img.lazy(data-original="#{videos[2].url}" src="#{videos[2].url}" alt="图片三")
+      span.campaigns_pic_styleApp3.grow
+        a(href="")
+          img.lazy(data-original="#{videos[3].url}" src="#{videos[3].url}" alt="图片四")
+      span.campaigns_pic_style1.camRight.grow
+        a(href="")
+          img.lazy(data-original="#{videos[4].url}" src="#{videos[4].url}" alt="图片五")
+    div.campList
+        ul.clearfix
+            each video in videos
+                li
+                    a.campaigns_pic_style(href='' target='_blank')
+                        img(src='#{video.url}', alt='')
+  section.gallery
+    h2.title
+    div.row
+      each style in styles
+          div#gallery.col-sm-6.col-md-3
+              a.share_pic_wrap(href="")
+                  img.lazy.share_pic_style(data-original="#{style.url}" src="#{style.url}" alt="")
+                  span.share_pic_info
+                  span.share_pic_text
+                      em #{style.chDesc}
+                      i #{style.enDesc}
+                  span.share_pic_mask
+                  span.share_pic_bord
+  section.footer
+    div.footer-top
+    img.footer-pic(src="/images/footer.jpg" alt="尾部图片")
+    div.container
+      div.row
+        div.col-sm-1
+        div.col-sm-3
+          h4 贵宾热线：
+            strong 400-8075036
+        div.col-sm-4
+          h5 公司地址：广东省江门市蓬江区胜利路114号二楼之五
+        div.col-sm-2
+          span.social
+            img(src="/images/icon-weixin.png" alt="微信" width="35" height="35")
+          span.social
+            img(src="/images/icon-sina.png" alt="新浪" width="35" height="35")
+      div.line
+      img.logo-pic(src="/images/logo (1).png" alt="logo")
+      div.about-link
+        a(href="") 关于我们
+        span &nbsp;&nbsp;|&nbsp;&nbsp;
+        a(href="") 联系方式
+      div.row.xscontainer
+        div.col-sm-2
+        div.col-md-8
+          h5 达莎视觉保留所有权利&nbsp;粤ICP备11032453号&nbsp;
+            a(href="") 网弈电商技术支持
+        div.col-sm-2

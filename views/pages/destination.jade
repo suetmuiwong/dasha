@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+    link(rel="stylesheet",href="/css/local.css")
+    include ../includes/toMenu
+    include ../includes/sidenav
+    div.proSliderWrap
+        a.prevBtn(href="#pro_content" role="button" data-slide="prev")
+        a.nextBtn(href="#pro_content" role="button" data-slide="next")
+        div#pro_content.proPic.carousel.slide(data-ride="carousel")
+            div.carousel-inner.clearfix(role="listbox")
+               each photo, index in photos
+                   if index == 0
+                       div.item.active
+                           div.pro_pic.wPc
+                               img(src="#{photo.url}")
+                           div.pro_pic.wPad
+                               img(src="#{photo.url}")
+                           div.pro_pic.wPhone
+                               img(src="#{photo.url}")
+                   else
+                       div.item
+                           div.pro_pic.wPc
+                               img(src="#{photo.url}")
+                           div.pro_pic.wPad
+                               img(src="#{photo.url}")
+                           div.pro_pic.wPhone
+                               img(src="#{photo.url}")
+
+
+

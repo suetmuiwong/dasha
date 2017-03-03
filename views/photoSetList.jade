@@ -1,0 +1,39 @@
+extends ./layout
+
+
+block content
+    include ./includes/toMenu
+    section.galleryDetail
+        .container
+            .row
+                .clo-sm-12.gallery-pic
+                    each photo in photos
+                        img(src="#{photo.url}")
+    section.footer
+        div.footer-top
+        img.footer-pic(src="/images/footer.jpg" alt="尾部图片")
+        div.container
+            div.row
+                div.col-sm-1
+                div.col-sm-3
+                    h4 贵宾热线：
+                        strong 400-8075036
+                div.col-sm-4
+                    h5 公司地址：广东省江门市蓬江区胜利路114号二楼之五
+                div.col-sm-2
+                    span.social
+                        img(src="/images/icon-weixin.png" alt="微信" width="35" height="35")
+                    span.social
+                        img(src="/images/icon-sina.png" alt="新浪" width="35" height="35")
+            div.line
+            img.logo-pic(src="/images/logo (1).png" alt="logo")
+            div.about-link
+                a(href="") 关于我们
+                span &nbsp;&nbsp;|&nbsp;&nbsp;
+                a(href="") 联系方式
+            div.row.xscontainer
+                div.col-sm-2
+                div.col-md-8
+                    h5 达莎视觉保留所有权利&nbsp;粤ICP备11032453号&nbsp;
+                        a(href="") 网弈电商技术支持
+                div.col-sm-2

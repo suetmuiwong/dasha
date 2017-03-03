@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    include ../includes/toMenu
+    include ../includes/sidenav
+    div#carousel-banner.carousel.slide.navtop.H760-banner(data-ride="carousel")
+        ol.carousel-indicators
+            li.active(data-target="#carousel-banner" data-slide-to="0")
+            li.active(data-target="#carousel-banner" data-slide-to="1")
+            li.active(data-target="#carousel-banner" data-slide-to="2")
+        div.carousel-inner(role="listbox")
+            each photo,index in photos
+                if index == 0
+                    div.item.active
+                        a(href="")
+                            img(src="#{photo.url}" alt="图片一")
+                else
+                    div.item
+                        a(href="")
+                            img(src="#{photo.url}" alt="图片一")
+                a.left.carousel-control(href="#carousel-banner" role="button" data-slide="prev")
+                    span.glyphicon.glyphicon-chevron-left
+                    span.sr-only previous
+                a.right.carousel-control(href="#carousel-banner" role="button" data-slide="next")
+                    span.glyphicon.glyphicon-chevron-right
+                    span.sr-only next

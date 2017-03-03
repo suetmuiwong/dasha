@@ -1,0 +1,59 @@
+div.sidenav
+    if bg == 1
+        a(href="/localShow/#{parentId}",class="cur")
+            span 01
+            景区介绍
+        a(href="")
+            span 02
+            视频花絮
+        a(href="/photograph/#{parentId}")
+            span 03
+            客户照片
+    else if bg == 2
+        a(href="/localShow/#{parentId}")
+            span 01
+            景区介绍
+        a(href="",class="cur")
+            span 02
+            视频花絮
+        a(href="/photograph/#{parentId}")
+            span 03
+            客户照片
+    else if bg == 3
+        a(href="/localShow/#{parentId}")
+            span 01
+            景区介绍
+        a(href="")
+            span 02
+            视频花絮
+        a(href="/photograph/#{parentId}",class="cur")
+            span 03
+            客户照片
+    else
+        a(href="/localShow/#{parentId}")
+            span 01
+            景区介绍
+        a(href="")
+            span 02
+            视频花絮
+        a(href="/photograph/#{parentId}")
+            span 03
+            客户照片
+div.proTabtitle
+    span
+        if bg == 1
+            a(href="/localShow/#{parentId}",class="cur") 景区介绍
+            a(href="") 视频花絮
+            a(href="/photograph/#{parentId}") 客户照片
+        else if bg ==2
+            a(href="/localShow/#{parentId}") 景区介绍
+            a(href="",class="cur") 视频花絮
+            a(href="/photograph/#{parentId}") 客户照片
+        else if bg == 3
+            a(href="/localShow/#{parentId}") 景区介绍
+            a(href="") 视频花絮
+            a(href="/photograph/#{parentId}",class="cur") 客户照片
+        else
+            a(href="/localShow/#{parentId}") 景区介绍
+            a(href="") 视频花絮
+            a(href="/photograph/#{parentId}",class="cur") 客户照片
