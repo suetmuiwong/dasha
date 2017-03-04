@@ -1,6 +1,7 @@
 Node+Express+MongoDB搭建后台
 文件打开网址：http://localhost：3000/
 一、自行安装好 nodejs  https://nodejs.org/   （注意系统环境变量配置）
+
 二、安装express	
 	全局安装
 	```
