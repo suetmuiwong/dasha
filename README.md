@@ -8,6 +8,7 @@ Node+Express+MongoDB搭建后台
 	npm install express -g
 				npm install express-generator -g （express4 已经把命令行工具分离出来了）
 	```
+	
 三、安装MongoDB数据库	https://www.mongodb.com/ （可视化工具可使用robomongo）
 四、创建工程。	
 	express dasha （express项目种子生成器会自动生成express相应的工程结构）
