@@ -17,6 +17,7 @@ Node+Express+MongoDB搭建后台
 		/routes：路由目录
 		/views: jade模板目录，是view(视图)目录
 		app.js 程序main文件
+		
 五、进入工程，安装依赖（npm install），然后在工程根目录启动应用（npm start）
 六、使用mongoose连接MongoDB数据库
 	安装 npm install mongoose
