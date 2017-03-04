@@ -9,10 +9,10 @@ Node+Express+MongoDB搭建后台
 二、安装express
 
 	全局安装
-	```
+
 	npm install express -g
 	npm install express-generator -g （express4 已经把命令行工具分离出来了）
-	```
+	
 	
 三、安装MongoDB数据库
 
